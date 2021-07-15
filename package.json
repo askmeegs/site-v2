@@ -3,16 +3,26 @@
   "version": "0.0.1",
   "description": "A simple blog, set up with Eleventy.",
   "scripts": {
-    "start": "eleventy --serve",
-    "build": "NODE_ENV=production eleventy"
+    "serve": "npx eleventy --serve",
+    "start": "concurrently \"npm run tailwind:process\" \"npm run serve\"",
+    "build": "NODE_ENV=production eleventy",
+    "tailwind:process": "npx postcss src/scss/global.css --o src/_includes/assets/css/global.css --watch"
   },
   "dependencies": {
+    "concurrently": "^6.2.0",
+    "cssnano": "^5.0.6",
     "eleventy-plugin-seo": "^0.5.1",
     "luxon": "^1.26.0",
-    "tailwindcss": "^2.2.4"
+    "postcss": "^8.3.5",
+    "postcss-cli": "^8.3.1"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.1"
+    "@11ty/eleventy": "^0.11.1",
+    "autoprefixer": "^10.3.1",
+    "css-loader": "^6.0.0",
+    "mini-css-extract-plugin": "^2.1.0",
+    "postcss-loader": "^6.1.1",
+    "tailwindcss": "^2.2.4"
   },
   "engines": {
     "node": "12"
