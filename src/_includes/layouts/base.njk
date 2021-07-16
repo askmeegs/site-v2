@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    {# This is the base template for the site–other templates extend this one #}
+
+    <meta charset="utf-8"/>
+    <link rel="icon" href="/img/favicon.png"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&family=Roboto+Slab:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Your new 11ty blog"/>
+    <link rel="stylesheet" href="/global.css"/>
+
+    {% seo "" %}
+  </head>
+  <body>
+ 
+<div class="container mx-auto px-4">
+        <img src="/img/single-line-logo-transparent.png">
+     
+
+      {# Page or post content will appear here #}
+
+      {{ content | safe }}
+
+      <footer class="footer">
+        <div class="links">
+          <a href="/">Home</a>
+          <span class="divider">|</span>
+          <a href="/posts">Posts</a>
+          <span class="divider">|</span>
+          <a href="/about">About</a>
+        </div>
+      </footer>
+ </div>
+ 
+  </body>
+</html>
